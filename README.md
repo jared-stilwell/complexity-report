@@ -242,7 +242,7 @@ See the [contribution guidelines][contributions].
 
 [ci-image]: https://secure.travis-ci.org/jared-stilwell/complexity-report.png?branch=master
 [ci-status]: http://travis-ci.org/#!/jared-stilwell/complexity-report
-[escomplex]: https://github.com/jared-stilwell/escomplex
+[escomplex]: https://github.com/jared-stilwell/escomplex/blob/master/METRICS.md
 [jscomplexity]: http://jscomplexity.org/
 [node]: http://nodejs.org/
 [esprima]: http://esprima.org/

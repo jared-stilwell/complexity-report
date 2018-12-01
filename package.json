@@ -1,9 +1,9 @@
 {
-  "name": "complexity-report",
-  "version": "2.0.0-alpha",
+  "name": "@codesherpas/complexity-report",
+  "version": "1.0.0",
   "description": "Software complexity analysis for JavaScript projects",
-  "homepage": "https://github.com/jared-stilwell/complexity-report",
-  "bugs": "https://github.com/jared-stilwell/complexity-report/issues",
+  "homepage": "https://github.com/codesherpas/complexity-report",
+  "bugs": "https://github.com/codesherpas/complexity-report/issues",
   "license": "MIT",
   "author": "Phil Booth <pmbooth@gmail.com>",
   "bin": {
@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jared-stilwell/complexity-report.git"
+    "url": "https://github.com/codesherpas/complexity-report.git"
   },
   "maintainers": [
     {
-      "name": "Jared Stilwell",
-      "email": "jared.k.stilwell@gmail.com",
-      "url": "https://github.com/jared-stilwell"
+      "name": "Gabriel Levasseur",
+      "email": "gabriel.m.levasseur@gmail.com",
+      "url": "https://github.com/gabel0287"
     }
   ],
   "keywords": [

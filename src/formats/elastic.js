@@ -1,4 +1,6 @@
 /*globals exports, JSON */
+const path = require('path');
+const cwd = process.cwd();
 
 'use strict';
 

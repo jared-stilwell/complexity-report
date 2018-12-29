@@ -10,7 +10,7 @@ cli = require('commander'),
 config = require('./config'),
 fs = require('fs'),
 path = require('path'),
-escomplex = require('escomplex'),
+escomplex = require('typhonjs-escomplex'),
 check = require('check-types'),
 async = require('async');
 
@@ -79,7 +79,7 @@ function parseCommandLine () {
         trycatch: cli.trycatch || false,
         newmi: cli.newmi || false,
         ignoreErrors: cli.ignoreerrors || false,
-        noCoreSize: cli.nocoresize || false
+        noCoreSize: true
     };
 
     if (check.nonEmptyString(cli.format) === false) {
@@ -199,7 +199,7 @@ function readFile(filePath, cb) {
 }
 
 function error (functionName, err) {
-    fail('Fatal error [' + functionName + ']: ' + err.message);
+    console.error(err)
     process.exit(1);
 }
 
@@ -219,7 +219,7 @@ function commentFirstLine (source) {
 function setSource (modulePath, source) {
     var type = getType(modulePath);
     state.sources[type].push({
-        path: modulePath,
+        srcPath: modulePath,
         code: source
     });
 }
@@ -232,12 +232,15 @@ function getReports () {
     var result, failingModules;
 
     try {
-        result = escomplex.analyse(state.sources.js, options);
+        result = escomplex.analyzeProject(state.sources.js, options, {allowReturnOutsideFunction: true});
 
         if (!cli.silent) {
             writeReports(result);
         }
 
+        //NOTE: this functionality is not being used at the moment
+        //need to update to support output of tyhpon-escomplex
+        /*
         failingModules = getFailingModules(result.reports);
         if (failingModules.length > 0) {
             return fail('Warning: Complexity threshold breached!\nFailing modules:\n' + failingModules.join('\n'));
@@ -246,6 +249,7 @@ function getReports () {
         if (config.isProjectComplexityThresholdSet(cli) && isProjectTooComplex(result)) {
             fail('Warning: Project complexity threshold breached!');
         }
+        */
     } catch (err) {
         error('getReports', err);
     }

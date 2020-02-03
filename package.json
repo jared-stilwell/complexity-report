@@ -34,7 +34,7 @@
   "dependencies": {
     "async": "^2.1.5",
     "check-types": "^7.1.5",
-    "commander": "^2.9.0",
+    "commander": "^4.1.1",
     "escomplex": "2.0.0-alpha",
     "esprima": "^3.1.3"
   },
